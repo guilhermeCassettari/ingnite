@@ -1,0 +1,61 @@
+{
+  "id": "485dbff0-f0bf-4266-8399-71e30e408b1a",
+  "uid": "qui-nesciunt-nam",
+  "type": "blog",
+  "data": {
+    "title": "facilitate transparent interfaces",
+    "subtitle": "engineer visionary solutions",
+    "author": "innovate distributed e-services",
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&h=500&fit=crop"
+    },
+    "content": [
+      {
+        "heading": "redefine enterprise infrastructures",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Proident excepteur pariatur ex non occaecat deserunt ea ex nulla. Ut excepteur ipsum consectetur aute et exercitation mollit do. Labore amet esse laborum laborum veniam do amet.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "incubate clicks-and-mortar e-tailers",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Est nulla elit laborum ex ex consequat esse velit dolor. Ipsum consequat quis consectetur consectetur commodo voluptate.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "optimize granular systems",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Velit commodo voluptate fugiat minim. Ullamco aliqua mollit elit eiusmod non do.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "syndicate leading-edge metrics",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Quis ullamco ea commodo consequat ex officia sint et culpa sit excepteur nostrud. Officia proident id laborum aliquip ex ad officia. Labore consectetur sint amet veniam ut veniam cillum laboris pariatur laboris proident cillum voluptate.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}
