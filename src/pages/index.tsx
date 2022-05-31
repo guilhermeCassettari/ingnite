@@ -1,4 +1,6 @@
+
 import { GetStaticProps } from 'next';
+import { useState } from 'react';
 
 import { getPrismicClient } from '../services/prismic';
 
@@ -24,13 +26,52 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-// export default function Home() {
-//   // TODO
-// }
+export default function Home({ postsPagination }: HomeProps) {
+  const [havePostPagination, setHavePostPagination] = useState(postsPagination.next_page)
+  return (
+    <>
+      {postsPagination.results.map(post => (
+        <div key={post.uid}>
+          <h1>{post.data.title}</h1>
+          <p>{post.data.subtitle}</p>
+          <div>
+            <h1>{post.data.author}</h1>
+            <time>{post.first_publication_date}</time>
+          </div>
+        </div>
+      ))}
+      {havePostPagination && <h1>Carregar mais posts</h1>}
+    </>
 
-// export const getStaticProps = async () => {
-//   // const prismic = getPrismicClient({});
-//   // const postsResponse = await prismic.getByType(TODO);
+  )
+}
 
-//   // TODO
-// };
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient({})
+  const postsResponse = await prismic.getByType('blog')
+
+  const postsPagination = {
+    next_page: postsResponse.next_page,
+    results: postsResponse.results.map(post => {
+      return {
+        uid: post.id,
+        first_publication_date: new Date(post.first_publication_date).toLocaleDateString('pt-BR', {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+        }),
+        data: {
+          title: post.data.title,
+          subtitle: post.data.subtitle,
+          author: post.data.author
+        }
+      }
+    })
+  }
+
+  return {
+    props: {
+      postsPagination
+    }
+  }
+};
