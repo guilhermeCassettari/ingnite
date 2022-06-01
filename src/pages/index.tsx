@@ -1,5 +1,6 @@
 
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import { getPrismicClient } from '../services/prismic';
@@ -31,14 +32,17 @@ export default function Home({ postsPagination }: HomeProps) {
   return (
     <>
       {postsPagination.results.map(post => (
-        <div key={post.uid}>
-          <h1>{post.data.title}</h1>
-          <p>{post.data.subtitle}</p>
-          <div>
-            <h1>{post.data.author}</h1>
-            <time>{post.first_publication_date}</time>
-          </div>
-        </div>
+        <Link key={post.uid} href={`/post/${post.uid}`}>
+          <a>
+            <h1>{post.uid}</h1>
+            <h1>{post.data.title}</h1>
+            <p>{post.data.subtitle}</p>
+            <div>
+              <h1>{post.data.author}</h1>
+              <time>{post.first_publication_date}</time>
+            </div>
+          </a>
+        </Link>
       ))}
       {havePostPagination && <h1>Carregar mais posts</h1>}
     </>
